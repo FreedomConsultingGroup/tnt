@@ -12,16 +12,17 @@ class Auditlog implements Serializable {
          // version is set to false, because this isn't available by default for legacy databases
          version false
          // In case a sequence is needed, changed the identity generator for the following code:
-       id generator:'sequence', column:'customers_id', params:[sequence:'auditlog_sequence']
-//         id generator:'identity', column:'customers_id'
+//       id generator:'sequence', column:'customers_id', params:[sequence:'auditlog_sequence']
+        id generator:'identity', column:'customers_id'
          // In case a sequence is needed, changed the identity generator for the following code:
 //       id generator:'sequence', column:'auditevents_id', params:[sequence:'auditlog_sequence']
          id generator:'identity', column:'auditevents_id'
          id composite:['customersId','auditeventsId'], generator:'assigned'
+        // timeOfEvent defaultValue: new Date()
     }
     Long customersId
     Long auditeventsId
-    Date timeOfEvent
+    Date timeOfEvent = new Date()
     String customersUserid
 
     static constraints = {

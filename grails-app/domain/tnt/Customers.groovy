@@ -14,12 +14,13 @@ class Customers {
          // In case a sequence is needed, changed the identity generator for the following code:
        id generator:'sequence', column:'id', params:[sequence:'customers_sequence']
 //         id generator:'identity', column:'id'
+       //     lastLogin defaultValue: new Date()
     }
     Long id
     String userid
     String lastName
     String firstName
-    Long lastLogin
+    Date lastLogin
 
     static constraints = {
         id(max: 9999999999L)

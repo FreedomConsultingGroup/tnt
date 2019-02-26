@@ -14,6 +14,9 @@ class Questions {
          // In case a sequence is needed, changed the identity generator for the following code:
        id generator:'sequence', column:'id', params:[sequence:'questions_sequence']
  //        id generator:'identity', column:'id'
+      //  dateCreated defaultValue: new Date()
+      //  dateModified defaultValue: new Date()
+    
     }
     Long id
     Long questionsetId

@@ -13,6 +13,8 @@ class Documents {
          version false
        //  id column:'id'
          id generator:'sequence', column:'id', params:[sequence:'documents_sequence']
+  //       dateUploaded defaultValue: new Date()
+    //     dateModified defaultValue: new Date()
     }
     Long id
     Long customersId
